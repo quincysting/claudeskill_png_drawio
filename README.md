@@ -54,6 +54,9 @@ Sources: [`examples/example.drawio`](examples/example.drawio) · [`examples/exam
 
 ```
 .
+├── package.json                # enables `npx github:quincysting/claudeskill_png_drawio`
+├── bin/
+│   └── install.js              # zero-dependency installer → ~/.claude/skills/png-to-drawio
 ├── SKILL.md                    # the skill manifest Claude reads (workflow + gotchas)
 ├── assets/
 │   ├── aws_icons.py            # verified AWS4 icon map + category colours + soft()
@@ -88,17 +91,33 @@ See [docs/INSTALL.md](docs/INSTALL.md) for details (including overriding the dra
 
 ## Install (as a Claude Code skill)
 
+### Quickest — `npx` (no clone, no manual copy)
+
+```bash
+npx github:quincysting/claudeskill_png_drawio
+```
+
+This runs a zero‑dependency installer that copies the skill into
+`~/.claude/skills/png-to-drawio`. Options:
+
+- **Custom location:** `npx github:quincysting/claudeskill_png_drawio /path/to/skills` (or set `CLAUDE_SKILLS_DIR`).
+- **Overwrite in place:** add `--force` (otherwise an existing install is moved to a timestamped `.bak-…`).
+
+### Manual (clone & copy)
+
 ```bash
 git clone https://github.com/quincysting/claudeskill_png_drawio.git
 mkdir -p ~/.claude/skills
 cp -R claudeskill_png_drawio ~/.claude/skills/png-to-drawio
 ```
 
-Restart Claude Code (or start a new session). Then just ask, e.g.:
+Either way: **restart Claude Code** (or start a new session), then just ask, e.g.:
 
 > "Turn `ref/architecture.png` into an editable draw.io, then export a PowerPoint with real shapes."
 
-Claude will read `SKILL.md` and follow the workflow.
+Claude reads `SKILL.md` and follows the workflow. (The skill is the functional
+core — `SKILL.md` + `assets/` + `references/`; the `npx` installer copies exactly
+those.)
 
 ---
 

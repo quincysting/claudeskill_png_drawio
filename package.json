@@ -1,0 +1,37 @@
+{
+  "name": "claudeskill-png-drawio",
+  "version": "1.0.0",
+  "description": "Installer for the png-to-drawio Claude Code skill — recreate a PNG/AI-generated architecture diagram as an editable draw.io (.drawio) and a native PowerPoint with real shapes.",
+  "bin": {
+    "claudeskill-png-drawio": "bin/install.js"
+  },
+  "files": [
+    "bin/",
+    "SKILL.md",
+    "assets/",
+    "references/"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "keywords": [
+    "claude-code",
+    "claude-skill",
+    "drawio",
+    "diagrams-as-code",
+    "powerpoint",
+    "pptx",
+    "aws-architecture",
+    "png-to-drawio"
+  ],
+  "license": "MIT",
+  "author": "quincysting",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quincysting/claudeskill_png_drawio.git"
+  },
+  "homepage": "https://github.com/quincysting/claudeskill_png_drawio#readme",
+  "bugs": {
+    "url": "https://github.com/quincysting/claudeskill_png_drawio/issues"
+  }
+}

@@ -26,16 +26,32 @@ Python 3.9+ recommended.
 
 ## 2. Install as a Claude Code skill
 
+### Option A — `npx` (recommended, no clone)
+
+```bash
+npx github:quincysting/claudeskill_png_drawio
+```
+
+A zero‑dependency Node installer (`bin/install.js`) copies the skill
+(`SKILL.md` + `assets/` + `references/`) into `~/.claude/skills/png-to-drawio`.
+
+- **Custom skills dir:** pass a path or set the env var —
+  `npx github:quincysting/claudeskill_png_drawio /my/skills` or `CLAUDE_SKILLS_DIR=/my/skills npx github:…`
+- **Re‑install:** an existing copy is moved to `png-to-drawio.bak-<timestamp>`; use `--force` to overwrite without a backup.
+- Requires Node ≥ 14 (no npm publish needed — `npx github:` runs straight from the repo).
+
+### Option B — clone & copy
+
 ```bash
 git clone https://github.com/quincysting/claudeskill_png_drawio.git
 mkdir -p ~/.claude/skills
 cp -R claudeskill_png_drawio ~/.claude/skills/png-to-drawio
 ```
 
-Claude Code discovers skills in `~/.claude/skills/<name>/SKILL.md`. Restart Claude Code (or open a new session); the skill will appear and auto‑activate on relevant requests ("turn this png into draw.io", "make this diagram editable", "export to pptx with real shapes").
+Or symlink the clone instead of copying:
+`ln -s "$(pwd)/claudeskill_png_drawio" ~/.claude/skills/png-to-drawio`
 
-> You can keep the repo anywhere and symlink it instead:
-> `ln -s "$(pwd)/claudeskill_png_drawio" ~/.claude/skills/png-to-drawio`
+Claude Code discovers skills in `~/.claude/skills/<name>/SKILL.md`. **Restart Claude Code** (or open a new session); the skill auto‑activates on relevant requests ("turn this png into draw.io", "make this diagram editable", "export to pptx with real shapes").
 
 ## 3. Verify the install
 
