@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Transient render/icon outputs (regenerate with the scripts)
+/tmp/
+*.tmp
+_iconsheet.*
+_icontest.*
